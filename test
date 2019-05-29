@@ -13,3 +13,6 @@ curl -v -T target/*.war -u tomcat:tomcat 'http://'${tomcat_host}':'${tomcat_port
 docker run -t owasp/zap2docker-stable zap-baseline.py -t 'http://'${tomcat_host}':'${tomcat_port}'/manager/text/deploy?path=/'${context_path}'' || true -g gen.conf -r testreport.html 
 
 #docker exec zap zap-cli --verbose report -o /zap/reports/owasp-quick-scan-report.html --output-format html
+
+"user" :"kritika"
+"password":"kritika@12345"
