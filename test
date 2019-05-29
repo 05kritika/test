@@ -8,7 +8,7 @@ tomcat_password=tomcat
 
 context_path=VulnerableLab
 
-curl -v -T target/*.war -u ${tomcat_username}:${tomcat_password} 'http://'${tomcat_host}':'${tomcat_port}'/manager/text/deploy?path=/'${context_path}''
+curl -v -T target/*.war -u tomcat:tomcat 'http://'${tomcat_host}':'${tomcat_port}'/manager/text/deploy?path=/'${context_path}''
 
 docker run -t owasp/zap2docker-stable zap-baseline.py -t 'http://'${tomcat_host}':'${tomcat_port}'/manager/text/deploy?path=/'${context_path}'' || true -g gen.conf -r testreport.html 
 
